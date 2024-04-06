@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creation</title>
+</head>
+<body>
+    <form action="/edit" method="POST">
+        <input type="text" name="First_Name" value={{user.First_Name}} required>
+        <input type="text" name="Last_Name" value="{{user.Last_Name}}" required>
+        <input type="text" name="Profile_Pic" value="{{user.Profile_Pic}}" required>
+        <button name='id' value={{user.user_id}}>Save</button>
+    </form>
+    <form action="/">
+        <button>Cancel</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+</head>
+<body>
+    <h1>User Details Page</h1>
+    <ul>
+        <li>First Name: {{user.First_Name}}</li>
+        <li>Last Name: {{user.Last_Name}}</li>
+    </ul>
+    <img src={{user.Profile_Pic}} alt="">
+    <form action="/">
+        <button>Back</button>
+    </form>
+    <form action="/edit">
+        <button name='id' value={{user.user_id}}>Edit</button>
+   </form>
+   <form action="/delete"  method="POST">
+        <button name='id' value={{user.user_id}}>Delete</button>
+    </form>
+    <h2>Posts</h2>
+    <ul>
+        {% for post in posts %}
+        <li><a href="/p{{post.id}}">{{post.title}}</a></li>
+        {% endfor %}
+    </ul>
+
+   <form action="/add_post">
+    <button name="id" value={{user.user_id}}>Add Post</button>
+   </form>
+</body>
+</html>
+
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home_page</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <ul>
+        {% for user in users %}
+        <li><a href="/{{user.user_id}}">{{user.First_Name}} {{user.Last_Name}}</a></li>
+        {% endfor %}
+    </ul>
+    <form action="/user_create">
+        <button>Add User</button>
+    </form>
+    <form action="/tag_list">
+        <button>Tags</button>
+    </form>
+</body>
+</html>

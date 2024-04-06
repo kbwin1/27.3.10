@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Details</title>
+</head>
+<body>
+    <H1>{{post.title}}</H1>
+
+    <p>{{post.comment}}</p>
+
+    <h2>by {{post.owner_id.First_Name}}</h2>
+    {% if tags %}
+        <p>Tags:
+            {% for tag in tags %}
+            <a href="/t{{tag.id}}">{{tag.name}}</a>
+            {% endfor %}
+        </p>    
+    {% endif %}
+    <form action="edit_post">
+        <button name="id" value={{post.id}}>Edit</button>
+    </form>
+    <form action="/{{post.user_ref}}">
+        <button>Cancel</button>
+    </form>
+    <form action="/deleteP"  method="POST">
+        <button name='id' value={{post.id}}>Delete</button>
+    </form>
+</body>
+</html>

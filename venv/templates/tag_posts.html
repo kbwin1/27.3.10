@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag_post</title>
+</head>
+<body>
+    <h1>Post whit {{tags.name}}</h1>
+    <ul>
+        {% for tag in tags.posts %}
+        <li><a href="/p{{tag.id}}">{{tag.title}}</a></li>
+        {% endfor %}
+    </ul>
+    <form action="/edit_tag">
+        <button name='id' value={{tags.id}}>Edit</button>
+    </form>
+    <form action="/deleteT" method="POST">
+        <button name='id' value={{tags.id}}>Delete</button>
+    </form>
+    <form action="/tag_list">
+        <button>Back</button>
+    </form>
+</body>
+</html>

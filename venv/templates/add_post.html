@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creation</title>
+</head>
+<body>
+    <h1>Add Post for {{user.First_Name}}</h1>
+    <form action="/sub_post" method="POST">
+        <input type="text" placeholder="title" name="title" required>
+        <input type="text" placeholder="comment" name="comment" required>
+        {% for tag in tags %}
+        <input name='tag_id' value={{tag.id}} type="checkbox"> {{tag.name}}
+        {% endfor %}
+        <button name="id" value={{user.user_id}}>Add Post</button>
+    </form>
+    <form action="/{{user.user_id}}">
+        <button name="id" value={{user.user_id}}>Cancel</button>
+    </form>
+</body>
+</html>
